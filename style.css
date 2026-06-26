@@ -864,11 +864,6 @@ ul { list-style: none; }
 .masonry__item figcaption span:last-child {
   font-size: 11px;
   color: var(--gold);
-  .photography__more {
-  margin-top: 48px;
-  display: flex;
-  justify-content: center;
-}
 }
 
 /* ===================================================================
@@ -976,6 +971,8 @@ ul { list-style: none; }
 /* ===================================================================
    RESPONSIVE
    =================================================================== */
+
+/* Tablet */
 @media (max-width: 920px) {
   .about__grid { grid-template-columns: 1fr; }
   .interest-grid { grid-template-columns: 1fr; }
@@ -995,9 +992,14 @@ ul { list-style: none; }
     left: -45px;
     right: auto;
   }
+
+  .hero__name { font-size: clamp(2rem, 6vw, 3.5rem); }
 }
 
+/* Mobile */
 @media (max-width: 760px) {
+
+  /* Nav */
   .nav__links {
     position: fixed;
     top: 0; right: 0;
@@ -1018,7 +1020,56 @@ ul { list-style: none; }
   .nav__toggle.is-open span:nth-child(2) { opacity: 0; }
   .nav__toggle.is-open span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
 
+  /* Hero mobile: foto bulat kecil di atas, teks di bawah */
+  .hero {
+    justify-content: flex-start;
+    padding-top: 100px;
+  }
+
+  .hero__layout {
+    grid-template-columns: 1fr;
+    text-align: center;
+    padding: 0 24px;
+    gap: 24px;
+  }
+
+  .hero__content {
+    text-align: center;
+    order: 2;
+  }
+
+  .hero__photo {
+    order: 1;
+    width: 160px;
+    max-width: 160px;
+    aspect-ratio: 1 / 1;
+    border-radius: 50%;
+    margin: 0 auto;
+    justify-self: center;
+  }
+
+  .hero__name {
+    font-size: clamp(1.9rem, 9vw, 2.6rem);
+  }
+
+  .hero__tagline {
+    font-size: 14px;
+    margin-top: 16px;
+  }
+
+  .hero__eyebrow { margin-bottom: 16px; }
+
+  .hero__actions {
+    justify-content: center;
+    margin-top: 28px;
+  }
+
+  .hero__scroll-cue { bottom: 24px; }
+
+  /* Lainnya */
   .masonry { columns: 2 160px; }
   .cert-grid { grid-template-columns: 1fr; }
   .footer { flex-direction: column; gap: 8px; }
+  .journey__row { grid-template-columns: 1fr; }
+  .project-row__image img { height: 100%; top: 0; }
 }
