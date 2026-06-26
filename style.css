@@ -1066,7 +1066,7 @@ ul { list-style: none; }
     width: 100%;
     height: 100%;
     object-fit: cover;
-    object-position: top center;
+    object-position: center center;
   }
 
   /* Gradasi dari bawah ke atas supaya teks terbaca */
