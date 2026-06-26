@@ -1,4 +1,4 @@
-/* ===================================================================
+* ===================================================================
    DESIGN TOKENS
    =================================================================== */
 :root {
@@ -14,30 +14,30 @@
   --ink-soft: #5C6470;
   --ink-faint: #9298A3;
   --white: #FFFFFF;
-
+ 
   /* Type */
   --font-display: 'Fraunces', serif;
   --font-body: 'Inter', sans-serif;
   --font-mono: 'JetBrains Mono', monospace;
-
+ 
   /* Motion */
   --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
   --ease-soft: cubic-bezier(0.4, 0, 0.2, 1);
-
+ 
   /* Layout */
   --container: 1180px;
   --gutter: clamp(24px, 6vw, 80px);
 }
-
+ 
 /* ===================================================================
    RESET & BASE
    =================================================================== */
 * { margin: 0; padding: 0; box-sizing: border-box; }
-
+ 
 html {
   scroll-behavior: smooth;
 }
-
+ 
 body {
   font-family: var(--font-body);
   background: var(--cream);
@@ -46,26 +46,26 @@ body {
   -webkit-font-smoothing: antialiased;
   overflow-x: hidden;
 }
-
+ 
 img { max-width: 100%; display: block; }
 a { color: inherit; text-decoration: none; }
 ul { list-style: none; }
-
+ 
 ::selection {
   background: var(--gold-soft);
   color: var(--navy);
 }
-
+ 
 :focus-visible {
   outline: 2px solid var(--gold);
   outline-offset: 3px;
 }
-
+ 
 .mono {
   font-family: var(--font-mono);
   letter-spacing: 0.02em;
 }
-
+ 
 /* ===================================================================
    REVEAL ANIMATION BASE STATES
    (Motion One toggles a .is-visible class on intersection)
@@ -81,17 +81,17 @@ ul { list-style: none; }
 [data-reveal="name"]  { transform: translateY(100%); }
 [data-reveal="tagline"] { transform: translateY(24px); }
 [data-reveal="buttons"] { transform: translateY(24px); }
-
+ 
 [data-reveal].is-visible {
   opacity: 1;
   transform: translate(0, 0);
 }
-
+ 
 @media (prefers-reduced-motion: reduce) {
   [data-reveal] { opacity: 1 !important; transform: none !important; }
   html { scroll-behavior: auto; }
 }
-
+ 
 /* ===================================================================
    ROUTE PROGRESS BAR (signature element)
    =================================================================== */
@@ -109,7 +109,7 @@ ul { list-style: none; }
   background: linear-gradient(90deg, var(--gold), #E0C088);
   transition: width 0.1s linear;
 }
-
+ 
 /* ===================================================================
    NAVIGATION
    =================================================================== */
@@ -123,7 +123,7 @@ ul { list-style: none; }
   padding: 22px var(--gutter);
   mix-blend-mode: difference;
 }
-
+ 
 .nav__mark {
   font-family: var(--font-mono);
   font-size: 14px;
@@ -131,12 +131,12 @@ ul { list-style: none; }
   color: var(--white);
   letter-spacing: 0.1em;
 }
-
+ 
 .nav__links {
   display: flex;
   gap: 36px;
 }
-
+ 
 .nav__links a {
   font-family: var(--font-mono);
   font-size: 12.5px;
@@ -147,13 +147,13 @@ ul { list-style: none; }
   opacity: 0.75;
   transition: opacity 0.3s var(--ease-soft);
 }
-
+ 
 .nav__links a::before {
   content: attr(data-label);
   margin-right: 6px;
   opacity: 0.5;
 }
-
+ 
 .nav__links a::after {
   content: '';
   position: absolute;
@@ -163,10 +163,10 @@ ul { list-style: none; }
   background: var(--white);
   transition: width 0.3s var(--ease-soft);
 }
-
+ 
 .nav__links a:hover { opacity: 1; }
 .nav__links a:hover::after { width: 100%; }
-
+ 
 .nav__toggle {
   display: none;
   flex-direction: column;
@@ -183,7 +183,7 @@ ul { list-style: none; }
   background: var(--white);
   transition: transform 0.3s var(--ease-soft), opacity 0.3s var(--ease-soft);
 }
-
+ 
 /* ===================================================================
    HERO
    =================================================================== */
@@ -198,13 +198,13 @@ ul { list-style: none; }
   background: var(--navy);
   overflow: hidden;
 }
-
+ 
 .hero__bg {
   position: absolute;
   inset: 0;
   z-index: 0;
 }
-
+ 
 .hero__grid {
   position: absolute;
   inset: 0;
@@ -214,7 +214,7 @@ ul { list-style: none; }
   background-size: 64px 64px;
   mask-image: radial-gradient(ellipse 70% 60% at 50% 50%, black 30%, transparent 80%);
 }
-
+ 
 .hero__route-line {
   position: absolute;
   bottom: 0;
@@ -223,7 +223,7 @@ ul { list-style: none; }
   height: 1px;
   background: linear-gradient(90deg, transparent, var(--gold-soft), transparent);
 }
-
+ 
 .hero__layout {
   position: relative;
   z-index: 1;
@@ -235,11 +235,11 @@ ul { list-style: none; }
   margin: 0 auto;
   padding: 0 24px;
 }
-
+ 
 .hero__content {
   text-align: left;
 }
-
+ 
 .hero__photo {
   order: 2;
   border-radius: 8px;
@@ -249,13 +249,13 @@ ul { list-style: none; }
   max-width: 420px;
   justify-self: end;
 }
-
+ 
 .hero__photo img {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
-
+ 
 .hero__eyebrow {
   font-family: var(--font-mono);
   font-size: 13px;
@@ -265,7 +265,7 @@ ul { list-style: none; }
   margin-bottom: 28px;
   transition: opacity 0.8s var(--ease-out);
 }
-
+ 
 .hero__name {
   font-family: var(--font-display);
   font-weight: 500;
@@ -274,12 +274,12 @@ ul { list-style: none; }
   color: var(--cream);
   overflow: hidden;
 }
-
+ 
 .hero__name-line {
   display: block;
   transition: opacity 0.9s var(--ease-out), transform 0.9s var(--ease-out);
 }
-
+ 
 .hero__tagline {
   font-family: var(--font-body);
   font-weight: 300;
@@ -289,7 +289,7 @@ ul { list-style: none; }
   max-width: 640px;
   transition: opacity 0.8s var(--ease-out), transform 0.8s var(--ease-out);
 }
-
+ 
 .hero__actions {
   display: flex;
   gap: 18px;
@@ -298,7 +298,7 @@ ul { list-style: none; }
   flex-wrap: wrap;
   transition: opacity 0.8s var(--ease-out), transform 0.8s var(--ease-out);
 }
-
+ 
 .hero__scroll-cue {
   position: absolute;
   bottom: 40px;
@@ -337,7 +337,7 @@ ul { list-style: none; }
   60% { top: 40px; }
   100% { top: 40px; }
 }
-
+ 
 /* ===================================================================
    BUTTONS
    =================================================================== */
@@ -357,26 +357,26 @@ ul { list-style: none; }
 .btn svg { transition: transform 0.3s var(--ease-soft); }
 .btn:hover svg { transform: translateX(4px); }
 .btn:hover { transform: translateY(-2px); }
-
+ 
 .btn--primary {
   background: var(--gold);
   color: var(--navy);
 }
 .btn--primary:hover { background: #DBB877; }
-
+ 
 .btn--ghost {
   background: transparent;
   color: var(--cream);
   border-color: rgba(247,246,243,0.25);
 }
 .btn--ghost:hover { border-color: var(--gold); color: var(--gold); }
-
+ 
 .btn--light.btn--primary {
   background: var(--navy);
   color: var(--cream);
 }
 .btn--light.btn--primary:hover { background: var(--navy-soft); }
-
+ 
 /* ===================================================================
    SECTION SHARED
    =================================================================== */
@@ -384,25 +384,25 @@ ul { list-style: none; }
   position: relative;
   padding: clamp(90px, 14vw, 160px) 0;
 }
-
+ 
 .section__inner {
   max-width: var(--container);
   margin: 0 auto;
   padding: 0 var(--gutter);
 }
-
+ 
 .section__inner--center {
   text-align: center;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-
+ 
 .section__header {
   margin-bottom: clamp(48px, 7vw, 88px);
   max-width: 720px;
 }
-
+ 
 .eyebrow {
   display: inline-block;
   font-family: var(--font-mono);
@@ -414,9 +414,9 @@ ul { list-style: none; }
   padding-bottom: 8px;
   border-bottom: 1px solid var(--gold-soft);
 }
-
+ 
 .eyebrow--light { color: var(--gold); }
-
+ 
 .section__title {
   font-family: var(--font-display);
   font-weight: 500;
@@ -425,9 +425,9 @@ ul { list-style: none; }
   color: var(--ink);
   letter-spacing: -0.01em;
 }
-
+ 
 .section__title--light { color: var(--cream); }
-
+ 
 .section__desc {
   margin-top: 20px;
   font-size: 16px;
@@ -435,14 +435,14 @@ ul { list-style: none; }
   max-width: 540px;
   line-height: 1.7;
 }
-
+ 
 /* dark sections */
 .section--interests,
 .section--photography {
   background: var(--navy);
   color: var(--cream);
 }
-
+ 
 .section--about,
 .section--journey,
 .section--experience,
@@ -450,13 +450,13 @@ ul { list-style: none; }
 .section--certificates {
   background: var(--cream);
 }
-
+ 
 .section--contact {
   background: var(--navy);
   color: var(--cream);
   padding-bottom: 0;
 }
-
+ 
 /* ===================================================================
    ABOUT
    =================================================================== */
@@ -466,7 +466,7 @@ ul { list-style: none; }
   gap: clamp(40px, 6vw, 90px);
   align-items: start;
 }
-
+ 
 .about__portrait-frame {
   position: relative;
   border-radius: 6px;
@@ -481,7 +481,7 @@ ul { list-style: none; }
   position: relative;
   top: -5%;
 }
-
+ 
 .about__portrait-caption {
   margin-top: 16px;
   padding-top: 16px;
@@ -493,7 +493,7 @@ ul { list-style: none; }
   font-size: 12px;
   color: var(--ink-faint);
 }
-
+ 
 .about__text .lead {
   font-size: clamp(18px, 2vw, 21px);
   font-weight: 400;
@@ -501,13 +501,13 @@ ul { list-style: none; }
   line-height: 1.6;
   margin-bottom: 22px;
 }
-
+ 
 .about__text p {
   color: var(--ink-soft);
   font-size: 16px;
   margin-bottom: 0;
 }
-
+ 
 .about__stats {
   display: flex;
   gap: clamp(24px, 5vw, 56px);
@@ -516,7 +516,7 @@ ul { list-style: none; }
   border-top: 1px solid var(--stone);
   flex-wrap: wrap;
 }
-
+ 
 .about__stat {
   display: flex;
   flex-direction: column;
@@ -531,7 +531,7 @@ ul { list-style: none; }
   font-size: 13px;
   color: var(--ink-faint);
 }
-
+ 
 /* ===================================================================
    JOURNEY (Perjalanan Hidup)
    =================================================================== */
@@ -539,7 +539,7 @@ ul { list-style: none; }
   max-width: 700px;
   margin: 0 auto;
 }
-
+ 
 .journey__lead {
   font-family: var(--font-display);
   font-size: clamp(20px, 2.4vw, 26px);
@@ -548,14 +548,14 @@ ul { list-style: none; }
   color: var(--ink);
   margin-bottom: 32px;
 }
-
+ 
 .journey__body p {
   font-size: 16.5px;
   line-height: 1.85;
   color: var(--ink-soft);
   margin-bottom: 28px;
 }
-
+ 
 .journey__body > p:not(.journey__lead)::first-letter {
   font-family: var(--font-display);
   font-size: 3.2em;
@@ -565,26 +565,26 @@ ul { list-style: none; }
   margin: 6px 8px 0 0;
   color: var(--gold);
 }
-
+ 
 .journey__image {
   margin: 44px 0;
   border-radius: 6px;
   overflow: hidden;
 }
-
+ 
 .journey__image img {
   width: 100%;
   aspect-ratio: 16 / 9;
   object-fit: cover;
 }
-
+ 
 .journey__image figcaption {
   margin-top: 12px;
   font-size: 11.5px;
   color: var(--ink-faint);
   text-align: center;
 }
-
+ 
 /* Layout 2 kolom: paragraf + foto kecil di kanan */
 .journey__row {
   display: grid;
@@ -593,35 +593,35 @@ ul { list-style: none; }
   align-items: start;
   margin-bottom: 28px;
 }
-
+ 
 .journey__row p {
   margin-bottom: 0;
 }
-
+ 
 .journey__photo-small {
   border-radius: 6px;
   overflow: hidden;
 }
-
+ 
 .journey__photo-small img {
   width: 100%;
   aspect-ratio: 3 / 4;
   object-fit: cover;
 }
-
+ 
 .journey__photo-small figcaption {
   margin-top: 10px;
   font-size: 11px;
   color: var(--ink-faint);
   text-align: center;
 }
-
+ 
 @media (max-width: 700px) {
   .journey__row {
     grid-template-columns: 1fr;
   }
 }
-
+ 
 /* ===================================================================
    INTERESTS
    =================================================================== */
@@ -632,21 +632,21 @@ ul { list-style: none; }
   background: rgba(247,246,243,0.1);
   border: 1px solid rgba(247,246,243,0.1);
 }
-
+ 
 .interest-card {
   background: var(--navy);
   padding: clamp(32px, 4vw, 48px) clamp(24px, 3vw, 36px);
   transition: background 0.4s var(--ease-soft);
 }
 .interest-card:hover { background: var(--navy-soft); }
-
+ 
 .interest-card__num {
   display: block;
   font-size: 13px;
   color: var(--gold);
   margin-bottom: 28px;
 }
-
+ 
 .interest-card h3 {
   font-family: var(--font-display);
   font-weight: 500;
@@ -655,13 +655,13 @@ ul { list-style: none; }
   margin-bottom: 14px;
   color: var(--cream);
 }
-
+ 
 .interest-card p {
   font-size: 14.5px;
   color: var(--ink-faint);
   line-height: 1.7;
 }
-
+ 
 /* ===================================================================
    TIMELINE (Experience)
    =================================================================== */
@@ -669,7 +669,7 @@ ul { list-style: none; }
   position: relative;
   padding-left: 0;
 }
-
+ 
 .timeline__line {
   position: absolute;
   left: 50%;
@@ -679,7 +679,7 @@ ul { list-style: none; }
   background: var(--stone);
   transform: translateX(-50%);
 }
-
+ 
 .timeline__line-fill {
   position: absolute;
   top: 0; left: 0;
@@ -688,7 +688,7 @@ ul { list-style: none; }
   background: var(--gold);
   transition: height 0.2s linear;
 }
-
+ 
 .timeline__item {
   position: relative;
   width: calc(50% - 48px);
@@ -698,10 +698,10 @@ ul { list-style: none; }
   border: 1px solid var(--stone);
   border-radius: 4px;
 }
-
+ 
 .timeline__item:nth-child(odd) { margin-left: 0; }
 .timeline__item:nth-child(even) { margin-left: calc(50% + 48px); }
-
+ 
 .timeline__dot {
   position: absolute;
   top: 32px;
@@ -713,14 +713,14 @@ ul { list-style: none; }
 }
 .timeline__item:nth-child(odd) .timeline__dot { right: -53px; }
 .timeline__item:nth-child(even) .timeline__dot { left: -53px; }
-
+ 
 .timeline__date {
   display: inline-block;
   font-size: 12px;
   color: var(--gold);
   margin-bottom: 12px;
 }
-
+ 
 .timeline__content h3 {
   font-family: var(--font-display);
   font-weight: 500;
@@ -729,20 +729,20 @@ ul { list-style: none; }
   margin-bottom: 6px;
   line-height: 1.35;
 }
-
+ 
 .timeline__org {
   font-size: 13.5px;
   color: var(--ink-faint);
   margin-bottom: 12px;
   font-style: italic;
 }
-
+ 
 .timeline__content p:last-child {
   font-size: 14.5px;
   color: var(--ink-soft);
   line-height: 1.65;
 }
-
+ 
 /* ===================================================================
    PROJECTS
    =================================================================== */
@@ -751,7 +751,7 @@ ul { list-style: none; }
   flex-direction: column;
   gap: clamp(48px, 6vw, 72px);
 }
-
+ 
 .project-row {
   display: grid;
   grid-template-columns: 0.95fr 1.05fr;
@@ -761,10 +761,10 @@ ul { list-style: none; }
   border-bottom: 1px solid var(--stone);
 }
 .project-row:last-child { border-bottom: none; padding-bottom: 0; }
-
+ 
 .project-row:nth-child(even) { direction: rtl; }
 .project-row:nth-child(even) > * { direction: ltr; }
-
+ 
 .project-row__image {
   border-radius: 6px;
   overflow: hidden;
@@ -778,14 +778,14 @@ ul { list-style: none; }
   position: relative;
   top: -10%;
 }
-
+ 
 .project-row__tag {
   display: block;
   font-size: 12px;
   color: var(--gold);
   margin-bottom: 14px;
 }
-
+ 
 .project-row__body h3 {
   font-family: var(--font-display);
   font-weight: 500;
@@ -794,14 +794,14 @@ ul { list-style: none; }
   margin-bottom: 14px;
   color: var(--ink);
 }
-
+ 
 .project-row__body p {
   font-size: 15px;
   color: var(--ink-soft);
   line-height: 1.7;
   margin-bottom: 20px;
 }
-
+ 
 .project-row__link {
   font-size: 14px;
   font-weight: 500;
@@ -812,7 +812,7 @@ ul { list-style: none; }
   transition: color 0.3s, border-color 0.3s;
 }
 .project-row__link:hover { color: var(--gold); border-color: var(--gold); }
-
+ 
 /* ===================================================================
    PHOTOGRAPHY (Masonry)
    =================================================================== */
@@ -820,7 +820,7 @@ ul { list-style: none; }
   columns: 3 220px;
   column-gap: 18px;
 }
-
+ 
 .masonry__item {
   position: relative;
   break-inside: avoid;
@@ -829,19 +829,19 @@ ul { list-style: none; }
   overflow: hidden;
   cursor: pointer;
 }
-
+ 
 .masonry__item img {
   width: 100%;
   height: auto;
   display: block;
   transition: transform 0.6s var(--ease-out);
 }
-
+ 
 .masonry__item--tall img { aspect-ratio: 3/4; object-fit: cover; }
 .masonry__item:not(.masonry__item--tall) img { aspect-ratio: 4/3; object-fit: cover; }
-
+ 
 .masonry__item:hover img { transform: scale(1.08); }
-
+ 
 .masonry__item figcaption {
   position: absolute;
   inset: 0;
@@ -854,7 +854,7 @@ ul { list-style: none; }
   transition: opacity 0.4s var(--ease-soft);
 }
 .masonry__item:hover figcaption { opacity: 1; }
-
+ 
 .masonry__item figcaption span:first-child {
   font-family: var(--font-display);
   font-size: 17px;
@@ -865,7 +865,7 @@ ul { list-style: none; }
   font-size: 11px;
   color: var(--gold);
 }
-
+ 
 /* ===================================================================
    CERTIFICATES
    =================================================================== */
@@ -874,7 +874,7 @@ ul { list-style: none; }
   grid-template-columns: repeat(4, 1fr);
   gap: 20px;
 }
-
+ 
 .cert-card {
   padding: 30px 26px;
   background: var(--white);
@@ -886,7 +886,7 @@ ul { list-style: none; }
   border-color: var(--gold);
   transform: translateY(-4px);
 }
-
+ 
 .cert-card__icon {
   font-size: 13px;
   color: var(--gold);
@@ -899,7 +899,7 @@ ul { list-style: none; }
   border-radius: 50%;
   margin-bottom: 22px;
 }
-
+ 
 .cert-card h3 {
   font-family: var(--font-display);
   font-weight: 500;
@@ -908,19 +908,19 @@ ul { list-style: none; }
   color: var(--ink);
   margin-bottom: 14px;
 }
-
+ 
 .cert-card__meta {
   font-size: 11.5px;
   color: var(--ink-faint);
 }
-
+ 
 /* ===================================================================
    CONTACT
    =================================================================== */
 .section--contact .section__inner--center {
   padding-top: 0;
 }
-
+ 
 .contact__title {
   font-family: var(--font-display);
   font-weight: 500;
@@ -929,7 +929,7 @@ ul { list-style: none; }
   margin-top: 24px;
   margin-bottom: 26px;
 }
-
+ 
 .contact__desc {
   font-size: 16px;
   color: var(--ink-faint);
@@ -937,9 +937,9 @@ ul { list-style: none; }
   line-height: 1.7;
   margin-bottom: 44px;
 }
-
+ 
 .contact__actions { margin-bottom: 36px; }
-
+ 
 .contact__socials {
   display: flex;
   gap: 28px;
@@ -954,7 +954,7 @@ ul { list-style: none; }
   transition: color 0.3s, border-color 0.3s;
 }
 .contact__socials a:hover { color: var(--gold); border-color: var(--gold); }
-
+ 
 .footer {
   margin-top: 110px;
   padding: 26px var(--gutter);
@@ -967,11 +967,11 @@ ul { list-style: none; }
   color: var(--ink-faint);
   letter-spacing: 0.04em;
 }
-
+ 
 /* ===================================================================
    RESPONSIVE
    =================================================================== */
-
+ 
 /* Tablet */
 @media (max-width: 920px) {
   .about__grid { grid-template-columns: 1fr; }
@@ -979,7 +979,7 @@ ul { list-style: none; }
   .project-row,
   .project-row:nth-child(even) { grid-template-columns: 1fr; direction: ltr; }
   .cert-grid { grid-template-columns: repeat(2, 1fr); }
-
+ 
   .timeline__line { left: 22px; }
   .timeline__item,
   .timeline__item:nth-child(odd),
@@ -992,13 +992,13 @@ ul { list-style: none; }
     left: -45px;
     right: auto;
   }
-
+ 
   .hero__name { font-size: clamp(2rem, 6vw, 3.5rem); }
 }
-
+ 
 /* Mobile */
 @media (max-width: 760px) {
-
+ 
   /* ---- Nav ---- */
   .nav__links {
     position: fixed;
@@ -1019,7 +1019,7 @@ ul { list-style: none; }
   .nav__toggle.is-open span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
   .nav__toggle.is-open span:nth-child(2) { opacity: 0; }
   .nav__toggle.is-open span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
-
+ 
   /* ---- Hero mobile: split layout ---- */
   /* Foto besar di atas (60vh), kartu cream di bawah dengan teks & tombol */
   .hero {
@@ -1032,7 +1032,7 @@ ul { list-style: none; }
     min-height: 100vh;
     background: var(--navy);
   }
-
+ 
   /* Layout jadi flex column, bukan grid */
   .hero__layout {
     display: flex;
@@ -1046,7 +1046,7 @@ ul { list-style: none; }
     position: relative;
     z-index: 1;
   }
-
+ 
   /* Foto mengisi 58vh di atas */
   .hero__photo {
     order: 1;
@@ -1062,19 +1062,19 @@ ul { list-style: none; }
     z-index: 1;
     overflow: hidden;
   }
-
+ 
   .hero__photo img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     object-position: center 10%;
   }
-
+ 
   /* Tidak perlu overlay gelap lagi */
   .hero__photo::after {
     display: none;
   }
-
+ 
   /* Kartu putih/cream di bawah foto */
   .hero__content {
     order: 2;
@@ -1087,7 +1087,7 @@ ul { list-style: none; }
     border-radius: 20px 20px 0 0;
     margin-top: -20px;
   }
-
+ 
   /* Eyebrow */
   .hero__eyebrow {
     font-size: 10px;
@@ -1095,19 +1095,19 @@ ul { list-style: none; }
     margin-bottom: 10px;
     color: var(--gold);
   }
-
+ 
   /* Nama — warna gelap karena background terang */
   .hero__name {
     font-size: clamp(1.7rem, 7vw, 2.2rem);
     line-height: 1.1;
     color: var(--ink);
   }
-
+ 
   /* Nama tiap baris */
   .hero__name-line {
     color: var(--ink);
   }
-
+ 
   /* Tagline */
   .hero__tagline {
     font-size: 12.5px;
@@ -1116,7 +1116,7 @@ ul { list-style: none; }
     max-width: 100%;
     color: var(--ink-soft);
   }
-
+ 
   /* Tombol: sejajar horizontal, kompak */
   .hero__actions {
     display: flex;
@@ -1126,18 +1126,18 @@ ul { list-style: none; }
     margin-top: 20px;
     flex-wrap: nowrap;
   }
-
+ 
   .hero__actions .btn {
     padding: 10px 20px;
     font-size: 13px;
     gap: 6px;
   }
-
+ 
   .hero__actions .btn svg {
     width: 13px;
     height: 13px;
   }
-
+ 
   /* Tombol ghost pakai warna ink karena background terang */
   .hero__actions .btn--ghost {
     color: var(--ink);
@@ -1147,7 +1147,7 @@ ul { list-style: none; }
     border-color: var(--gold);
     color: var(--gold);
   }
-
+ 
   /* Scroll cue */
   .hero__scroll-cue {
     bottom: auto;
@@ -1158,15 +1158,15 @@ ul { list-style: none; }
     background: var(--cream);
     padding-bottom: 24px;
   }
-
+ 
   .hero__scroll-cue span {
     color: var(--ink-faint);
   }
-
+ 
   .hero__scroll-line {
     background: rgba(20, 24, 31, 0.15);
   }
-
+ 
   /* ---- Section lain mobile ---- */
   .masonry { columns: 2 160px; }
   .cert-grid { grid-template-columns: 1fr; }
